@@ -4,8 +4,5 @@
         "psr-0": {
             "RHildred\\Editable": "src"
         }
-    },
-    "require": {
-        "michelf/php-markdown": "*"
     }
 }
