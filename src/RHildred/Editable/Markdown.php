@@ -1,9 +1,9 @@
 <?php
 
+namespace RHildred\Editable;
+
+
 use \Michelf\MarkdownExtra;
-
-
-namespace RHildred/Editable;
 
 class Markdown
 {
