@@ -1,6 +1,8 @@
 # editable
 
-composer installable module for editable markdown on a web page. There is a [partial demo here](https://rhildred.github.io/editable). To use in a project, add an .htaccess in a folder named www in your repository:
+composer installable module for editable markdown on a web page. There is a [partial demo here](https://rhildred.github.io/editable). To use in a project, `"require": {"rhildred/editable": "dev-master"}` in your composer.json file.
+
+add an .htaccess in a folder named www in your repository:
 
     AddHandler application/x-httpd-php .phtml
     RewriteEngine On
