@@ -15,5 +15,6 @@
     "require": {
         "michelf/php-markdown": "*",
         "kbjr/Git.php": "*"
-    }
+    },
+    "minimum-stability":"dev"
 }
