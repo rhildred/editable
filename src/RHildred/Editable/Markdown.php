@@ -20,7 +20,7 @@ class Markdown
 
         //save the file
         $sFname = str_replace('_', '.', $sId);
-        $sDir = __DIR__ . '/../../../../../../public/';
+        $sDir = __DIR__ . '/../../../../../../www/';
         file_put_contents($sDir . $sFname, $sMarkdown);
 
         //delete refering file from cache
