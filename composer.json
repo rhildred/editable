@@ -7,8 +7,7 @@
         }
     },
     "require": {
-        "michelf/php-markdown": "*",
-        "kbjr/Git.php": "*"
+        "michelf/php-markdown": "*"
     },
     "minimum-stability":"dev"
 }
