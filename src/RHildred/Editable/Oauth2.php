@@ -25,8 +25,7 @@ class Oauth2
 		 . "&scope=https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email"
 		 . "&response_type=code&max_auth_age=0";
 
-		//forward user to Facebook auth page
-		header("Location: $auth_url");
+        return($auth_url);
 	}
 
 	private function run_curl($url, $method = 'GET', $postvals = null){
