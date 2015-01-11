@@ -13,6 +13,8 @@
  */
 namespace kbjr;
 
+use \Exception;
+
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) die('Bad load order');
 
 // ------------------------------------------------------------------------
