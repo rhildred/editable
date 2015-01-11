@@ -30,13 +30,15 @@ define(["jquery", "he", "to-markdown", "autogrowtextarea"], function (jQuery, he
                 };
                 jQuery.ajax({
                     data: oData,
-                    url: 'api/ToMd',
+                    url: 'ToMd',
                     type: 'POST'
                 }).done(function(sHtml){
                     jQuery("#" + sId).html(sHtml);
                 }).fail(function(xhr){
                     oEditable.html(sOld);
-                    console.log(xhr.status);
+                    jQuery("body").on("click", sSelector, onEditableClick);
+                    alert("updating failed return code: " + xhr.status + " response: " +xhr.responseText);
+                    console.log(xhr.status, xhr.responseText);
                 });
 
                 // turn editing back on

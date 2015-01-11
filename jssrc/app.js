@@ -3,9 +3,8 @@
 // Configure loading modules from the lib directory,
 // except 'app' ones,
 requirejs.config({
-    "baseUrl": "js/lib",
+    "baseUrl": "jssrc/lib",
     "paths": {
-        "app": "../app",
         "jquery": "//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery",
         "bootstrap": "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min",
         "he": "//rhildred.github.io/to-markdown/bower_components/he/he",
