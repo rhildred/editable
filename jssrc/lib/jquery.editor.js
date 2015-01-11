@@ -2,7 +2,7 @@ define(["jquery", "he", "to-markdown", "autogrowtextarea"], function (jQuery, he
     window.he = he;
     jQuery.fn.editor = function () {
         var sSelector = this.selector;
-        jQuery("#content").on("click", sSelector, function onEditableClick() {
+        jQuery("body").on("click", sSelector, function onEditableClick() {
             var oEditable = jQuery(this);
             var sId = this.id;
             var sOld = jQuery(this).html();
@@ -14,7 +14,7 @@ define(["jquery", "he", "to-markdown", "autogrowtextarea"], function (jQuery, he
             jQuery("#editText").focus();
 
             // turn editing of other fields off
-            jQuery("#content").off("click", sSelector, onEditableClick);
+            jQuery("body").off("click", sSelector, onEditableClick);
             jQuery(sSelector).unbind("click");
             jQuery("#updatebuttonid").click(function () {
                 var oButton = jQuery(this);
@@ -40,13 +40,13 @@ define(["jquery", "he", "to-markdown", "autogrowtextarea"], function (jQuery, he
                 });
 
                 // turn editing back on
-                jQuery("#content").on("click", sSelector, onEditableClick);
+                jQuery("body").on("click", sSelector, onEditableClick);
                 return false;
             });
             jQuery("#cancelbuttonid").click(function () {
                 // restoring contents of div and turn editing back on
                 oEditable.html(sOld);
-                jQuery("#content").on("click", sSelector, onEditableClick);
+                jQuery("body").on("click", sSelector, onEditableClick);
                 return false;
             });
         });
