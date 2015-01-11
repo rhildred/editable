@@ -23,7 +23,7 @@ class Phtml
 
     }
     public static function layout($sLayout){
-        global $Viewbag;
+        $Viewbag = Phtml::$Viewbag;
         if(!$Viewbag->bInLayout){
             $Viewbag->bInLayout = true;
             //don't want to output anything from sScript the first time
@@ -39,7 +39,7 @@ class Phtml
         }
     }
     function renderBody(){
-        global $Viewbag;
+        $Viewbag = Phtml::$Viewbag;
         if(isset($Viewbag->sScript)){
             include($Viewbag->sScript . ".phtml");
         }else{
@@ -54,7 +54,7 @@ class Phtml
 
     function renderPartial($oCollection, $sPartial)
     {
-        global $Viewbag;
+        $Viewbag = Phtml::$Viewbag;
         if(!is_array($oCollection)){
             // Get cURL resource
             $curl = curl_init();
