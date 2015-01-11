@@ -1,0 +1,54 @@
+define(["jquery", "he", "to-markdown", "autogrowtextarea"], function (jQuery, he) {
+    window.he = he;
+    jQuery.fn.editor = function () {
+        var sSelector = this.selector;
+        jQuery("#content").on("click", sSelector, function onEditableClick() {
+            var oEditable = jQuery(this);
+            var sId = this.id;
+            var sOld = jQuery(this).html();
+
+            // adding new buttons to wikified html
+            jQuery(this).html('<textarea id="editText">' + toMarkdown(sOld) +
+                '</textarea><input id="updatebuttonid" type="button" value="Update" /><input id="cancelbuttonid" type="button" value="Cancel" />');
+            jQuery("#editText").autoGrow();
+            jQuery("#editText").focus();
+
+            // turn editing of other fields off
+            jQuery("#content").off("click", sSelector, onEditableClick);
+            jQuery(sSelector).unbind("click");
+            jQuery("#updatebuttonid").click(function () {
+                var oButton = jQuery(this);
+
+                // get text out of text area
+                var sText = jQuery("#editText").val();
+
+                // saving string
+                jQuery("#" + sId).html("<img src=\"images/turningArrow.gif\" />");
+                var oData = {
+                    sKey: sId,
+                    sValue: sText
+                };
+                jQuery.ajax({
+                    data: oData,
+                    url: 'api/ToMd',
+                    type: 'POST'
+                }).done(function(sHtml){
+                    jQuery("#" + sId).html(sHtml);
+                }).fail(function(xhr){
+                    oEditable.html(sOld);
+                    console.log(xhr.status);
+                });
+
+                // turn editing back on
+                jQuery("#content").on("click", sSelector, onEditableClick);
+                return false;
+            });
+            jQuery("#cancelbuttonid").click(function () {
+                // restoring contents of div and turn editing back on
+                oEditable.html(sOld);
+                jQuery("#content").on("click", sSelector, onEditableClick);
+                return false;
+            });
+        });
+    }
+});

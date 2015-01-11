@@ -1,10 +1,15 @@
 <!DOCTYPE html>
+
 <head>
     <title>Partial Demo</title>
+    <link rel="stylesheet" href="csssrc/main.css" />
 </head>
-<body>
-    <h1>Partial Demo:</h1>
-    <p>Click in the area below to edit the markdown. You will not be able to save it.</p>
-<?php \RHildred\Editable\Markdown::render("README.md") ?>
 
+<body>
+    <div class="container">
+        <h1>Partial Demo:</h1>
+        <p>Click in the area below to edit the markdown. You will not be able to save it.</p>
+        <?php \RHildred\Editable\Markdown::render( "README.md") ?>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.min.js" data-main="jssrc/app"></script>
 </body>
