@@ -7,19 +7,24 @@ use \stdClass;
 class Phtml
 {
     public static $Viewbag;
-    public static function render($sScript){
+    public static function render($sScript, $sFName = null){
+        $sScript = str_replace(".phtml", "", $sScript);
         $Viewbag = Phtml::$Viewbag = new stdClass();
         $Viewbag->bInLayout = false;
         $Viewbag->sScript = $sScript;
         ob_start();
         include $sScript . ".phtml";
-        $sFName = $sScript . "." . date("Y") . ".html";
+        $bInWebPage = false;
+        if($sFName == null){
+            $sFName = $sScript . "." . date("Y") . ".html";
+            $bInWebPage = true;
+        }
         if(isset($Viewbag->sOut))
            file_put_contents($sFName, $Viewbag->sOut);
         else
             file_put_contents($sFName, ob_get_contents());
         ob_end_clean();
-        include $sFName;
+        if($bInWebPage)include $sFName;
 
     }
     public static function layout($sLayout){
