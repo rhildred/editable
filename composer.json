@@ -9,5 +9,6 @@
     "require": {
         "michelf/php-markdown": "*"
     },
-    "minimum-stability":"dev"
+    "minimum-stability":"dev",
+    "license":"MIT"
 }
