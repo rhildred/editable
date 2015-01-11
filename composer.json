@@ -2,7 +2,8 @@
     "name": "rhildred/editable",
     "autoload": {
         "psr-0": {
-            "RHildred\\Editable": "src"
+            "RHildred\\Editable": "src",
+            "kbjr": "src"
         }
     },
     "repositories": [
