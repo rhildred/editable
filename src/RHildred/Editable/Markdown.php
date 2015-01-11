@@ -12,11 +12,10 @@ class Markdown
 
     }
 
-    public static function save($sId){
+    public static function save($sId, $sMarkdown, $sReferer){
         if(!isset($_SESSION["currentuser"])) throw new Exception('no user logged in');
 
         //convert to html
-        $sMarkdown = $request->parameters["sValue"];
         $sHtml = MarkdownExtra::defaultTransform($sMarkdown);
 
         //save the file
@@ -25,8 +24,6 @@ class Markdown
         file_put_contents($sDir . $sFname, $sMarkdown);
 
         //delete refering file from cache
-        $sReferer = !empty($_SERVER['HTTP_REFERER'])? basename($_SERVER['HTTP_REFERER']):"index";
-        if($sReferer == "www" || $sReferer == "" || $sReferer == "salesucation.com") $sReferer = "index";
         $sIndex = $sDir . $sReferer . "." . date("Y") . ".html";
         if(file_exists($sIndex))unlink($sIndex);
 
