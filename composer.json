@@ -6,13 +6,6 @@
             "kbjr": "src"
         }
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/kbjr/Git.php"
-    }
-],
-
     "require": {
         "michelf/php-markdown": "*",
         "kbjr/Git.php": "*"
