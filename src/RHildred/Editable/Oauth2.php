@@ -8,7 +8,7 @@ class Oauth2
 	private $oCreds;
 	public function __construct($sReturnUrl)
 	{
-		$this->oCreds = json_decode(file_get_contents(__DIR__ . '/../../../../../creds/google.json'));
+		$this->oCreds = json_decode(file_get_contents(__DIR__ . '/../../../../../../creds/google.json'));
 		$rgxQuery = "/\?.*$/";
 		$this->sRedirect = preg_replace($rgxQuery, "", $sReturnUrl);
 		if (!preg_match("/localhost/", $this->sRedirect))
