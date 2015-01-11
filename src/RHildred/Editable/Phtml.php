@@ -4,13 +4,11 @@ namespace RHildred\Editable;
 
 use \stdClass;
 
-$Viewbag = new stdClass();
-$Viewbag->bInLayout = false;
-
 class Phtml
 {
+    public static $Viewbag = new stdClass();
     public static function render($sScript){
-        global $Viewbag;
+        $Viewbag = Phtml::$Viewbag;
         $Viewbag->bInLayout = false;
         $Viewbag->sScript = $sScript;
         ob_start();
