@@ -6,9 +6,9 @@ use \stdClass;
 
 class Phtml
 {
-    public static $Viewbag = new stdClass();
+    public static $Viewbag;
     public static function render($sScript){
-        $Viewbag = Phtml::$Viewbag;
+        $Viewbag = Phtml::$Viewbag = new stdClass();
         $Viewbag->bInLayout = false;
         $Viewbag->sScript = $sScript;
         ob_start();
