@@ -30,7 +30,7 @@ class Markdown
         // now we need to commit the file
         putenv('DYLD_LIBRARY_PATH=/usr/lib/:$DYLD_LIBRARY_PATH');
         $repo = Git::open(__DIR__ . '/../../../../../..');  // -or- Git::create('/path/to/repo')
-        $repo->add("public/" . $sFname);
+        $repo->add("www/" . $sFname);
         $repo->commit('web commit from ' . $_SESSION["currentuser"]->name);
 
         echo $sHtml;
