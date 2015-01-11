@@ -11,6 +11,7 @@
  * @copyright  Copyright 2013 James Brumond
  * @repo       http://github.com/kbjr/Git.php
  */
+namespace kbjr;
 
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) die('Bad load order');
 
@@ -25,7 +26,6 @@ if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) die('Bad load order');
  * @class  Git
  */
 
-namespace kbjr;
 
 class Git {
 
