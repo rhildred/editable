@@ -2,6 +2,8 @@
 
 namespace RHildred\Editable;
 
+use \stdClass;
+
 $Viewbag = new stdClass();
 $Viewbag->bInLayout = false;
 
