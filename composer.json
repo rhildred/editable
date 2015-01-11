@@ -7,6 +7,6 @@
     },
     "require": {
         "michelf/php-markdown": "*",
-        "/kbjr/Git.php": "*"
+        "kbjr/Git.php": "*"
     }
 }
