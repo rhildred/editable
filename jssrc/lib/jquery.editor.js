@@ -1,5 +1,4 @@
-define(["jquery", "he", "to-markdown", "autogrowtextarea"], function (jQuery, he) {
-    window.he = he;
+(function($) {
     jQuery.fn.editor = function () {
         var sSelector = this.selector;
         jQuery("body").on("click", sSelector, function onEditableClick() {
@@ -53,4 +52,4 @@ define(["jquery", "he", "to-markdown", "autogrowtextarea"], function (jQuery, he
             });
         });
     }
-});
+}(jQuery));

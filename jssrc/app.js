@@ -11,6 +11,7 @@ requirejs.config({
         "to-markdown": "//rhildred.github.io/to-markdown/src/to-markdown",
         "autogrowtextarea": "//rhildred.github.io/editable/jssrc/lib/jquery.autogrowtextarea",
         "editor": "//rhildred.github.io/editable/jssrc/lib/jquery.editor"
+        //"editor": "jquery.editor"
     },
     shim: {
         "bootstrap": {
@@ -53,7 +54,8 @@ define(["jquery", "bootstrap"], function (jQuery) {
     });
 
     // doing it here so that we can see how this works
-    requirejs(["editor"], function () {
+    requirejs(["jquery", "he", "to-markdown", "autogrowtextarea", "editor"], function (jQuery, he) {
+        window.he = he;
         jQuery(".editable").editor();
     });
 });
