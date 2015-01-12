@@ -24,12 +24,11 @@
                 // saving string
                 jQuery("#" + sId).html("<img src=\"images/turningArrow.gif\" />");
                 var oData = {
-                    sKey: sId,
                     sValue: sText
                 };
                 jQuery.ajax({
                     data: oData,
-                    url: 'ToMd',
+                    url: 'ToMd/' + sId,
                     type: 'POST'
                 }).done(function(sHtml){
                     jQuery("#" + sId).html(sHtml);
