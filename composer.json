@@ -1,14 +1,20 @@
 {
     "name": "rhildred/editable",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/rhildred/Git.php"
+        }
+    ],
     "autoload": {
         "psr-0": {
-            "RHildred\\Editable": "src",
-            "kbjr": "src"
+            "RHildred\\Editable": "src"
         }
     },
     "require": {
-        "michelf/php-markdown": "*"
+        "michelf/php-markdown": "*",
+        "rhildred/Git.php": "dev-master"
     },
-    "minimum-stability":"dev",
-    "license":"MIT"
+    "minimum-stability": "dev",
+    "license": "MIT"
 }
